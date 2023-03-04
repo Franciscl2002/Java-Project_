@@ -1,0 +1,17 @@
+import java.util.Calendar;
+
+public class DigitalClock {
+   public static void main(String[] args) {
+      while (true) {
+         Calendar now = Calendar.getInstance();
+         int hour = now.get(Calendar.HOUR_OF_DAY);
+         int minute = now.get(Calendar.MINUTE);
+         int second = now.get(Calendar.SECOND);
+         System.out.printf("%02d:%02d:%02d\n", hour, minute, second);
+         try {
+            Thread.sleep(1000); // wait for 1 second
+         } catch (InterruptedException e) {
+         }
+      }
+   }
+}
